@@ -3,21 +3,16 @@
 
 
 
-int i = 0;
-int j = value.Length - 1;
-bool IsPalindrome(string value)
-while (true)
+using System;
+static bool getStatus(string myString)
 {
-    if (i > j)
-    {
-        return true;
-    }
-    char a = value[i];
-    char b = value[j];
-    if (char.ToLower(a) != char.ToLower(b))
-    {
-        return false;
-    }
-    i++;
-    j--;
+    string first = myString.Substring(0, myString.Length / 2);
+    char[] arr = myString.ToCharArray();
+
+    Array.Reverse(arr);
+
+    string temp = new string(arr);
+    string second = temp.Substring(0, temp.Length / 2);
+
+    return first.Equals(second);
 }
