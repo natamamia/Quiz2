@@ -3,19 +3,28 @@
 // b. ლუწი რიცხვების ნამრავლი
 // c. დაითვლის მასივში თითოეული ელემენტის რაოდენობას (3)
 
-int x = n / k;
+// 1.
 
-unordered_map<int, int> freq;
+int[] number = new int[10];
+Console.WriteLine("Enter Number");
+for (int i = 0; i < number.Length; i++)
+number[i] = Convert.ToInt32(Console.ReadLine());
+int index = 0;
+int sum = 0;
 
-for (int i = 0; i < n; i++)
+// a.
+for (int i = 0; i < number.Length; i+=2)
 {
-    freq[arr[i]]++;
+    sum += number[i];
+    Console.WriteLine("Even number sum is: " + sum);
 }
 
-for (auto i : freq)
-{
-    if (i.second > x)
-    {
-        cout << i.first << endl;
-    }
-}
+// b.
+
+for (int i = 0; i < number.Length; i += 2)
+    if (number % 2 == 1)
+    sum += number;
+    Console.WriteLine(number1);
+
+// c.
+totalNumbers = numbers.Count();
