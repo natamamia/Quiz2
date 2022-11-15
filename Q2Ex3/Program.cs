@@ -1,46 +1,17 @@
 ﻿// 3. დაწერეთ პროგრამა რომელიც მასივში დაბეჭდავს ერთმანეთის მეზობლად მდგარი ტოლი ელემენტების მაქსიმალურ რაოდენობას და ამ ელემენტს. 
 // მაგ 1 1 2 2 2 3 4 2 2 - უნდა დაბეჭდოს 3 და 2. (3)
 
+using System;
 
-int main()
+int[] number = new int[10] { 5, 5, 9, 6, 5, 5, 5, 8, 3, 7 };
+int count = 1;
+for (int i = 0; i < number.Length; i++)
 {
-    int n, i, j, a[10000], temp, count = 0;
-    int diff = a[1] - a[0];
-
-    scanf("%d", &n);
-    getchar();
-
-    for (i = 0; i < n; i++)
+    for (int j = i; j < number.Length - 1; j++)
     {
-        scanf("%d", &a[i]);
-        getchar();
+        if (number[j] == number[j + 1])
+            count = count + 1;
     }
-
-    for (i = 0; i < n - 1; i++)
-    {
-        for (j = 0; j < n - i - 1; j++)
-        {
-            if (a[j] > a[j + 1])
-            {
-                temp = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = temp;
-            }
-        }
-    }
-    for (i = 0; i < n - 1; i++)
-    {
-        if (a[i + 1] - a[i] > diff)
-        {
-            diff = a[i + 1] - a[i];
-            count++;
-        }
-    }
-    for (i = 0; i < count; i++)
-    {
-        printf("%d %d ", a[i], a[i + 1]);
-    }
-    printf("\n");
-
-    return 0;
+    Console.WriteLine("\t\n " + number[i] + "occurs" + count);
 }
+Console.WriteLine();
